@@ -1,5 +1,5 @@
 export default {
-  'login com sucesso': (browser) => {
+  'successfully login': (browser) => {
     const userInfo = '.user .info span';
 
     browser
