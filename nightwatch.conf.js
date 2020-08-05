@@ -1,7 +1,8 @@
-const chromedriver = require("chromedriver");
+require('@babel/register')();
+const chromedriver = require('chromedriver');
 
 module.exports = {
-  src_folders: ["tests"],
+  src_folders: ['tests'],
 
   webdriver: {
     start_process: true,
@@ -12,7 +13,7 @@ module.exports = {
   test_settings: {
     default: {
       desiredCapabilities: {
-        browserName: "chrome",
+        browserName: 'chrome',
       },
     },
   },
