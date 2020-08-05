@@ -1,0 +1,6 @@
+node_modules
+pgdb_data/*
+!pgdb_data/.gitkeep
+tests_output/*
+chromedriver.log
+geckodriver.log
