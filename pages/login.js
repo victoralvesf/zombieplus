@@ -1,7 +1,7 @@
 const loginActions = {
   with: function (email, password) {
     return this.navigate()
-      .waitForElementVisible('@loginForm', 3000)
+      .waitForElementVisible('@loginForm')
       .setValue('@emailInput', email)
       .setValue('@passwordInput', password)
       .click('@loginButton');
@@ -9,13 +9,13 @@ const loginActions = {
   shouldSeeAlertDanger: function (text) {
     // prettier-ignore
     return this
-      .waitForElementVisible('@alertDanger', 3000)
+      .waitForElementVisible('@alertDanger')
       .assert.containsText('@alertDanger', text);
   },
   shouldSeeAlertInfo: function (text) {
     // prettier-ignore
     return this
-      .waitForElementVisible('@alertInfo', 3000)
+      .waitForElementVisible('@alertInfo')
       .assert.containsText('@alertInfo', text);
   },
 };

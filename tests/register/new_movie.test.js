@@ -41,7 +41,7 @@ export default {
   'then i should see the movie on list': (browser) => {
     const movie = browser.page.movie();
     movie
-      .waitForElementVisible('@moviesTable', 3000)
+      .waitForElementVisible('@moviesTable')
       .assert.containsText('@moviesTable', movieData.title);
   },
 };

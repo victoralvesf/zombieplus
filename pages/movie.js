@@ -9,7 +9,7 @@ const movieActions = {
 
     return this.click('@statusSelect')
       .useXpath()
-      .waitForElementVisible(selector, 2000)
+      .waitForElementVisible(selector)
       .click(selector)
       .useCss();
   },
@@ -22,7 +22,9 @@ const movieActions = {
   uploadCover: function (filename) {
     const imagePath = path.resolve(__dirname, '..', 'images', filename);
 
-    return this.setValue('@coverUploadInput', imagePath);
+    return this.setValue('@coverUploadInput', imagePath)
+      .pause(500)
+      .assert.attributeContains('.picture-src', 'src', 'blob');
   },
 };
 

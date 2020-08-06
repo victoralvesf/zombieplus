@@ -2,7 +2,7 @@ require('@babel/register')();
 const chromedriver = require('chromedriver');
 
 module.exports = {
-  src_folders: ['tests/register'],
+  src_folders: ['tests'],
 
   page_objects_path: './pages',
   globals_path: './hooks/globals.js',
@@ -15,6 +15,9 @@ module.exports = {
 
   test_settings: {
     default: {
+      globals: {
+        waitForConditionTimeout: 10000,
+      },
       desiredCapabilities: {
         browserName: 'chrome',
       },
