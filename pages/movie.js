@@ -32,6 +32,8 @@ export default {
   commands: [movieActions],
   elements: {
     addButton: '.movie-add',
+    searchInput: 'input[placeholder^="Pesquisar"]',
+    searchButton: '#search-movie',
     movieForm: '#movie-form',
     titleInput: 'input[name="title"]',
     statusSelect: 'input[placeholder="Status"]',
@@ -42,5 +44,6 @@ export default {
     coverUploadInput: 'input[type="file"]',
     saveButton: '#create-movie',
     moviesTable: '.table-movies table tbody',
+    tr: '.table-movies table tbody tr',
   },
 };
