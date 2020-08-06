@@ -10,12 +10,7 @@ export default {
     const login = browser.page.login();
     const sidebar = browser.page.sidebar();
 
-    login
-      .navigate()
-      .waitForElementVisible('@loginForm', 3000)
-      .setValue('@emailInput', 'victor@qaninja.io')
-      .setValue('@passwordInput', 'qaninja')
-      .click('@loginButton');
+    login.with('victor@qaninja.io', 'qaninja');
 
     sidebar
       .waitForElementVisible('@userInfo', 3000)
