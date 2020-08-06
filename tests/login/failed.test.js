@@ -1,11 +1,4 @@
 export default {
-  before: (browser) => {
-    browser.resizeWindow(1600, 900);
-  },
-  after: (browser) => {
-    browser.end();
-  },
-
   'incorrect password': (browser) => {
     const login = browser.page.login();
     login
