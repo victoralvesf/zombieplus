@@ -34,6 +34,7 @@ export default {
       .setValue('@releaseDateInput', movieData.releaseDate)
       .insertCast(movieData.cast)
       .setValue('@synopsisTextarea', movieData.synopsis)
+      .uploadCover(movieData.cover)
       .click('@saveButton');
   },
 

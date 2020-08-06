@@ -1,3 +1,5 @@
+import path from 'path';
+
 const movieActions = {
   register: function () {
     return this.click('@addButton').waitForElementVisible('@movieForm');
@@ -16,6 +18,11 @@ const movieActions = {
       this.setValue('@castInput', [actor, this.api.Keys.ENTER]);
     });
     return this;
+  },
+  uploadCover: function (filename) {
+    const imagePath = path.resolve(__dirname, '..', 'images', filename);
+
+    return this.setValue('@coverUploadInput', imagePath);
   },
 };
 
