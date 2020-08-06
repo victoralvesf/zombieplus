@@ -5,5 +5,7 @@ export default {
     emailInput: 'input[name="email"]',
     passwordInput: 'input[name="password"]',
     loginButton: '.login-button',
+    alertDanger: '.alert-danger',
+    alertInfo: '.alert-info',
   },
 };

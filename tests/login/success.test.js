@@ -5,9 +5,10 @@ export default {
   after: (browser) => {
     browser.end();
   },
+
   'successfully login': (browser) => {
-    const userInfo = '.user .info span';
     const login = browser.page.login();
+    const sidebar = browser.page.sidebar();
 
     login
       .navigate()
@@ -16,8 +17,8 @@ export default {
       .setValue('@passwordInput', 'qaninja')
       .click('@loginButton');
 
-    browser
-      .waitForElementVisible(userInfo, 3000)
-      .assert.containsText(userInfo, 'Victor');
+    sidebar
+      .waitForElementVisible('@userInfo', 3000)
+      .assert.containsText('@userInfo', 'Victor');
   },
 };
