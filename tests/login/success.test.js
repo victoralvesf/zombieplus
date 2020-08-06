@@ -4,9 +4,6 @@ export default {
     const sidebar = browser.page.sidebar();
 
     login.with('victor@qaninja.io', 'qaninja');
-
-    sidebar
-      .waitForElementVisible('@userInfo', 3000)
-      .assert.containsText('@userInfo', 'Victor');
+    sidebar.expectLoggedUser('Victor');
   },
 };

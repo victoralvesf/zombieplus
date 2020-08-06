@@ -6,11 +6,17 @@ const loginActions = {
       .setValue('@passwordInput', password)
       .click('@loginButton');
   },
-  shouldSeeAlertWithText: function (element, text) {
-    return this.waitForElementVisible(element, 3000).assert.containsText(
-      element,
-      text
-    );
+  shouldSeeAlertDanger: function (text) {
+    // prettier-ignore
+    return this
+      .waitForElementVisible('@alertDanger', 3000)
+      .assert.containsText('@alertDanger', text);
+  },
+  shouldSeeAlertInfo: function (text) {
+    // prettier-ignore
+    return this
+      .waitForElementVisible('@alertInfo', 3000)
+      .assert.containsText('@alertInfo', text);
   },
 };
 
