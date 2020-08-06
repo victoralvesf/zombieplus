@@ -32,6 +32,6 @@ export default {
     synopsisTextarea: 'textarea[name="overview"]',
     coverUploadInput: 'input[type="file"]',
     saveButton: '#create-movie',
-    moviesTable: '.table-movies',
+    moviesTable: '.table-movies table tbody',
   },
 };

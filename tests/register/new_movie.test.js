@@ -1,7 +1,9 @@
+import pg from '../../db/database';
+
 let movieData;
 
 export default {
-  before: (browser) => {
+  before: async (browser) => {
     movieData = {
       title: 'Resident Evil',
       status: 'Disponível',
@@ -11,6 +13,8 @@ export default {
       cover: 'resident-evil-2002.jpg',
       synopsis: `Uma unidade militar especial é recrutada para lutar contra um poderoso e descontrolado supercomputador e centenas de cientistas mutantes, criaturas que se alimentam de carne humana, depois de um acidente de laboratório.`,
     };
+
+    await pg.removeMovieByTitle(movieData.title);
 
     const login = browser.page.login();
     const sidebar = browser.page.sidebar();
@@ -30,7 +34,13 @@ export default {
       .setValue('@releaseDateInput', movieData.releaseDate)
       .insertCast(movieData.cast)
       .setValue('@synopsisTextarea', movieData.synopsis)
-      .click('@saveButton')
-      .waitForElementVisible('@moviesTable');
+      .click('@saveButton');
+  },
+
+  'then i should see the movie on list': (browser) => {
+    const movie = browser.page.movie();
+    movie
+      .waitForElementVisible('@moviesTable', 3000)
+      .assert.containsText('@moviesTable', movieData.title);
   },
 };
