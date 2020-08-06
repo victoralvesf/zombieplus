@@ -26,6 +26,12 @@ const movieActions = {
       .pause(500)
       .assert.attributeContains('.picture-src', 'src', 'blob');
   },
+  searchMovie: function (title) {
+    // prettier-ignore
+    return this
+      .setValue('@searchInput', title)
+      .click('@searchButton');
+  },
 };
 
 export default {
@@ -45,5 +51,6 @@ export default {
     saveButton: '#create-movie',
     moviesTable: '.table-movies table tbody',
     tr: '.table-movies table tbody tr',
+    alertDanger: '.alert-danger',
   },
 };

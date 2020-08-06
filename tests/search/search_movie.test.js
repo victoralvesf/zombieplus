@@ -33,7 +33,7 @@ export default {
   'when i do the search by title': (browser) => {
     const movie = browser.page.movie();
 
-    movie.setValue('@searchInput', movieData.title).click('@searchButton');
+    movie.searchMovie(movieData.title);
   },
 
   'then i have to see this title on the list': (browser) => {
