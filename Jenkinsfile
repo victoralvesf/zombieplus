@@ -1,7 +1,8 @@
 pipeline {
     agent {
         docker {
-            image "node"
+            image "victoralvesf/node-alpine-chrome"
+            args "--network=skynet"
         }
     }
     stages {
@@ -12,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "yarn test:headless"
+                sh "yarn test:ci"
             }
         }
     }
