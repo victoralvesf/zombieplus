@@ -2,10 +2,14 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            sh "yarn"
+            steps {
+                sh "yarn"
+            }
         }
         stage('Test') {
-          sh "yarn test:headless"
+            steps {
+                sh "yarn test:headless"
+            }
         }
     }
 }
