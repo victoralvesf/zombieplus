@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image "victoralvesf/node-alpine-chrome"
-            args "--network=skynet"
+            args "--network=cursonightwatch_skynet"
         }
     }
     stages {
