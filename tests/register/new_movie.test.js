@@ -3,11 +3,12 @@ import pg from '../../db/database';
 let movieData;
 
 export default {
+  '@tags': ['new'],
   before: async (browser) => {
     movieData = {
       title: 'Resident Evil',
       status: 'Disponível',
-      year: 2002,
+      year: '2002',
       releaseDate: '30/05/2002',
       cast: ['Milla Jovovich', 'Michelle Rodriguez', 'Eric Mabius'],
       cover: 'resident-evil-2002.jpg',

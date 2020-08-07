@@ -21,7 +21,7 @@ const loginActions = {
 };
 
 export default {
-  url: 'http://zombie:5000/login',
+  url: '/login',
   commands: [loginActions],
   elements: {
     loginForm: '.card-login',
