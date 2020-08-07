@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 # docker pull postgres
 # docker pull dpage/pgadmin4
@@ -11,7 +11,7 @@ services:
     container_name: pgdb
     restart: always
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - ./pgdb_data:/var/lib/postgresql/data
     environment:
@@ -24,10 +24,10 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@qaninja.io"
-      PGADMIN_DEFAULT_PASSWORD: "qaninja"
+      PGADMIN_DEFAULT_EMAIL: 'admin@qaninja.io'
+      PGADMIN_DEFAULT_PASSWORD: 'qaninja'
     ports:
-      - "15432:80"
+      - '15432:80'
     depends_on:
       - pgdb
     networks:
@@ -36,9 +36,9 @@ services:
   zombie_api:
     image: papitoio/zombie-api
     environment:
-      DATABASE: "pgdb"
+      DATABASE: 'pgdb'
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - pgdb
     networks:
@@ -47,9 +47,9 @@ services:
   zombie_web:
     image: papitoio/zombie-web
     environment:
-      VUE_APP_API: "http://zombie:3000"
+      VUE_APP_API: 'http://zombie:3000'
     ports:
-      - "5000:5000"
+      - '5000:5000'
     depends_on:
       - zombie_api
     networks:
